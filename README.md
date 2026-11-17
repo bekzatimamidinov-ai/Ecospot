@@ -82,6 +82,18 @@ npm run dev
 
 В VS Code: `Terminal → Run Task → Запустить всё`.
 
+## Тестирование
+
+54 автотеста API (pytest) на отдельной базе `ecospot_test`:
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+pytest
+```
+
+Тест-кейсы, покрытие требований и критериев приёмки: [docs/testing.md](docs/testing.md). HTML-отчёт: [docs/test-report.html](docs/test-report.html).
+
 ## Демо-аккаунты
 
 Пароль у всех: `ecospot123`

@@ -23,6 +23,14 @@
       "problemMatcher": []
     },
     {
+      "label": "Запустить тесты",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe -m pytest --html=../docs/test-report.html --self-contained-html",
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
       "label": "Пересоздать БД с демо-данными",
       "type": "shell",
       "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe -m app.seed --reset",

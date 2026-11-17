@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env", env_file_encoding="utf-8")
 
     database_url: str = "postgresql+psycopg://ecospot:ecospot@127.0.0.1:5433/ecospot"
-    jwt_secret: str = "change-me-in-production"
+    jwt_secret: str = "ecospot-dev-secret-change-me-in-production-2026"
     jwt_algorithm: str = "HS256"
     jwt_expire_minutes: int = 60 * 24
     upload_dir: Path = BASE_DIR / "uploads"

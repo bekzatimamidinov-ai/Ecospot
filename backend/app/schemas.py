@@ -1,6 +1,6 @@
 from datetime import date, datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
 
 class ORM(BaseModel):
@@ -116,6 +116,11 @@ class ProblemDetail(ProblemListItem):
     supported_by_me: bool = False
     history: list[HistoryOut] = []
     events: list[ShortEvent] = []
+
+    @field_validator("photos", mode="before")
+    @classmethod
+    def _photo_urls(cls, v):
+        return [x if isinstance(x, str) else x.url for x in v or []]
 
 
 class ModerationIn(BaseModel):
