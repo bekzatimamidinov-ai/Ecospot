@@ -74,13 +74,16 @@ Swagger-документация API: http://127.0.0.1:8000/docs
 
 ```bash
 cd frontend
-npm install
-npm run dev
+npm.cmd install
+npm.cmd run dev
 ```
 
 Открыть http://localhost:5173
 
 В VS Code: `Terminal → Run Task → Запустить всё`.
+
+> В PowerShell используйте `npm.cmd` вместо `npm`: по умолчанию Windows блокирует скрипт `npm.ps1`
+> («выполнение сценариев отключено в этой системе»).
 
 ## Тестирование
 

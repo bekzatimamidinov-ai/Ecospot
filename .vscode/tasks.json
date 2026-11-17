@@ -3,17 +3,19 @@
   "tasks": [
     {
       "label": "Backend (FastAPI)",
-      "type": "shell",
-      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe -m uvicorn app.main:app --reload --port 8000",
-      "options": { "cwd": "${workspaceFolder}/backend" },
+      "type": "process",
+      "command": "${workspaceFolder}\\backend\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "uvicorn", "app.main:app", "--reload", "--port", "8000"],
+      "options": { "cwd": "${workspaceFolder}\\backend" },
       "isBackground": true,
       "problemMatcher": []
     },
     {
       "label": "Frontend (Vite)",
-      "type": "shell",
-      "command": "npm run dev",
-      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "type": "process",
+      "command": "npm.cmd",
+      "args": ["run", "dev"],
+      "options": { "cwd": "${workspaceFolder}\\frontend" },
       "isBackground": true,
       "problemMatcher": []
     },
@@ -24,17 +26,19 @@
     },
     {
       "label": "Запустить тесты",
-      "type": "shell",
-      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe -m pytest --html=../docs/test-report.html --self-contained-html",
-      "options": { "cwd": "${workspaceFolder}/backend" },
+      "type": "process",
+      "command": "${workspaceFolder}\\backend\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "--html=../docs/test-report.html", "--self-contained-html"],
+      "options": { "cwd": "${workspaceFolder}\\backend" },
       "group": "test",
       "problemMatcher": []
     },
     {
       "label": "Пересоздать БД с демо-данными",
-      "type": "shell",
-      "command": "${workspaceFolder}/backend/.venv/Scripts/python.exe -m app.seed --reset",
-      "options": { "cwd": "${workspaceFolder}/backend" },
+      "type": "process",
+      "command": "${workspaceFolder}\\backend\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "app.seed", "--reset"],
+      "options": { "cwd": "${workspaceFolder}\\backend" },
       "problemMatcher": []
     }
   ]
